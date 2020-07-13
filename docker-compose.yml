@@ -1,0 +1,31 @@
+version: '3'
+services: 
+  express_app:
+    build: ./app
+    working_dir: /usr/src/app
+    container_name: express_server
+    environment: 
+      - NODE_ENV=development
+    command: npm start
+    ports: 
+      - '5099:8080'
+    networks:
+      - express_redis
+    links:
+      - redis_server
+    volumes:
+      - /usr/src/app/node_modules
+      - ./app:/usr/src/app
+    depends_on: 
+      - redis_server
+    restart: always
+  redis_server:
+    image: redis
+    container_name: redis_container
+    networks:
+      - express_redis
+    volumes:
+      - $PWD/db/redis-data:/var/lib/redis
+      - $PWD/db/redis.conf:/usr/local/etc/redis/redis.conf
+networks:
+  express_redis:

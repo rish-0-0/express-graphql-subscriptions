@@ -1,0 +1,49 @@
+{
+  "name": "base-graphql-express-subscriptions",
+  "version": "1.0.0",
+  "description": "Template for graphql express subscriptions",
+  "main": "src/app.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "babelify": "babel ./src --out-dir dist",
+    "build": "npm run clean && npm run babelify",
+    "start": "npm run build && node ./dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rish-0-0/express-graphql-subscriptions.git"
+  },
+  "keywords": [
+    "Express",
+    "Graphql",
+    "Subscriptions",
+    "Redis",
+    "PubSub",
+    "Sessions",
+    "Real",
+    "Time"
+  ],
+  "author": "Rishabh Anand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rish-0-0/express-graphql-subscriptions/issues"
+  },
+  "homepage": "https://github.com/rish-0-0/express-graphql-subscriptions#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.15.1",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-redis-subscriptions": "^2.2.1",
+    "ioredis": "^4.17.3",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "rimraf": "^3.0.2"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": null,
+    "database": "chat",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": "5432"
+  },
+  "staging": {
+    "use_env_variable": "DB_STAGING_URL",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DB_PROD_URL",
+    "dialect": "postgres"
+  }
+}
