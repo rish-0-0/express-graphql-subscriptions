@@ -1,0 +1,18 @@
+type Query {
+  getMessage(id: Int!): Messages!
+  getChatMessages(chatId: Int!): [Messages!]!
+  getUserMessages(userId: Int!): ]Messages!]!
+}
+
+type Mutation {
+  createMessage(userId: Int!, chatId: Int!, text: String!, media: String): Messages!
+  deleteMessage(id: Int!): Boolean!
+  editMessage(id: Int!,userId: Int!, chatId: Int!, text: String!, media: String): Messages!
+}
+
+type Messages {
+  text: String!
+  media: String!
+  chatId: Int!
+  userId: Int!
+}

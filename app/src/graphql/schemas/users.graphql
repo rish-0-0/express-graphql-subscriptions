@@ -1,0 +1,20 @@
+type Query {
+  me(id: Int!): User!
+  getUser(id: Int, phoneNumber: String): User!
+  getUsers(id: [Int!]!): [User!]!
+  getAllUsersInChat(id: Int!): [User!]!
+}
+
+type User {
+  id: Int!
+  name: String!
+  phoneNumber: String!
+  online: Boolean!
+}
+
+type Mutation  {
+  createUser(name: String!, phoneNumber: String!): User!
+  deleteUser(id: Int!): Boolean!
+  updateUser(id: Int!, name: String, phoneNumber: String): User!
+}
+

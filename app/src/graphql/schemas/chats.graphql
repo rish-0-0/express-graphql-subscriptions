@@ -1,0 +1,20 @@
+type Query {
+  getChats(id: [Int!]!): [Chats!]!
+  getChat(id: Int!): Chats!
+  getUserChats(userId: Int!): [Chats!]!
+  getChatMessagesAfterTime(chatId: Int!, lastTime: DateTime!): [Messages!]!
+}
+
+type Mutation {
+  createChat(public: Boolean!, title: String!): Chats!
+  updateChat(id: Int!, public: Boolean, title: String): Chats!
+  deleteChat(id: Int!): Boolean!
+}
+
+type Chats {
+  id: Int!
+  public: Boolean!
+  title: String!
+  users: [Users!]!
+  messages: [Messages!]!
+}
